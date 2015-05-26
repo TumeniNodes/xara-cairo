@@ -1933,7 +1933,7 @@ BOOL CCamView::GetCurrentMousePos(OilCoord* pMousePos) const
 	*(wxPoint *)&pt = GetRenderWindow()->ScreenToClient( ::wxGetMousePosition() );
 
 	// If the mouse is outside the view then we can do nothing more.
-	if (!CurrentSize.Inside(pt)) return FALSE;
+	if (!CurrentSize.Contains(pt)) return FALSE;
 
 	// Convert to OIL coordinates.
 	if (pMousePos!=NULL)
@@ -2813,7 +2813,7 @@ void CCamView::OnLButtonDown( wxMouseEvent &event )
 
 	// Is click within allowed movement rectangle and permitted time delay
 	INT32 TimeDelay = (ThisClickTime - TimeOfLastClick);
-	if( ClickBounds.Inside( point ) && ( TimeDelay <= (INT32)ClickGap ) )
+	if( ClickBounds.Contains( point ) && ( TimeDelay <= (INT32)ClickGap ) )
 		ThisSingleIsTriple = TRUE;
 	else
 		ThisSingleIsTriple = FALSE;
@@ -3058,7 +3058,7 @@ void CCamView::OnLButtonDblClk(wxMouseEvent &event)
 	MonotonicTime ClickGap(LocalEnvironment::GetMouseDoubleClickDelay());
 	// Is click within allowed movement rectangle and permitted time delay
 	INT32 TimeDelay = (ThisClickTime - TimeOfLastClick);
-	if (ClickBounds.Inside( point ) && (TimeDelay <= (INT32)ClickGap))
+	if (ClickBounds.Contains( point ) && (TimeDelay <= (INT32)ClickGap))
 		ThisDoubleIsQuad = TRUE;
 	else
 		ThisDoubleIsQuad = FALSE;
@@ -4705,7 +4705,7 @@ void CCamView::HandleDragScrolling(wxPoint point)
 	{
 		// If the mouse is within the window, and we are performing deferred-scrolling
 		// then we can change over to auto-scrolling.
-		if (!wrSize.IsEmpty() && wrSize.Inside(point))
+		if (!wrSize.IsEmpty() && wrSize.Contains(point))
 		{
 			CurrentDragType = DRAGTYPE_AUTOSCROLL;
 		 	AutoScrollExcludeRulers = TRUE;
@@ -4724,13 +4724,13 @@ void CCamView::HandleDragScrolling(wxPoint point)
 	wrSize.Inflate(-ScrollBarSize,-ScrollBarSize);
 
 	// Has the mouse moved outside there bounds?
-	if (!wrSize.IsEmpty() && !wrSize.Inside(point))
+	if (!wrSize.IsEmpty() && !wrSize.Contains(point))
 	{
 		BOOL bCalcDeltas = TRUE;
 #if !defined(EXCLUDE_FROM_XARALX)
 		if (CurrentDragType == DRAGTYPE_OLESCROLL)
 		{
-			if (Outer.Inside(point))		// and still inside visible window
+			if (Outer.Contains(point))		// and still inside visible window
 			{
 				// If we've not been in the OLE scroll region for long enough
 				if (!m_OLELastOutTime.Elapsed(100))

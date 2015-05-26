@@ -6,7 +6,7 @@ An fast, 100% open source vector drawing program based on XaraLX
 Build Requirements
 ------------------
 
-* wxGTK-unicode-2.8
+* wxgtk-unicode-2.8
 * cairo-1.10
 * libxml-2.7
 * autoconf-2.6
@@ -44,6 +44,7 @@ Fixes and Additions
 
 (eradman)
 
+- Adapted to [wxWidgets](http://wxwidgets.org) 3.0
 - Adapted to [libpng](http://www.libpng.org/pub/png/libpng-manual.txt) 1.5 and 1.6
 - Don't print memory warnings for platforms without malloc_usable_size(3)
 - Compile with -Wno-write-strings 
@@ -70,7 +71,7 @@ History
 -------
 
 - 2013-08-19: Builds on OpenBSD 5.4 and FreeBSD 9.1
-- 2012-07-03: This fork of xara-cairo builds on Ubuntu 12, Debian 6.0, FreeBSD 9.0 and OpenBSD 5.1
+- 2012-07-03: Fork of xara-cairo builds on Ubuntu 12, Debian 6.0, FreeBSD 9.0 and OpenBSD 5.1
 - 2010-05-11: First attempt at replacing CDraw with cairo [announced](http://lists.cairographics.org/archives/cairo/2010-May/019862.html) along with a new Git repo at git://repo.or.cz/xara-cairo.git
 - 2007-11-06: Last commit to SVN
 - 2007-01-30: Xara LTD [aquired by Magix](http://www.talkgraphics.com/showthread.php?25654-Xara-acquired-by-MAGIX)
