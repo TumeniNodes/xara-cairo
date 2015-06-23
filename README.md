@@ -44,6 +44,7 @@ Fixes and Additions
 
 (eradman)
 
+- Removed debug printf statements
 - Adapted to [libpng](http://www.libpng.org/pub/png/libpng-manual.txt) 1.5 and 1.6
 - Don't print memory warnings for platforms without malloc_usable_size(3)
 - Compile with -Wno-write-strings 

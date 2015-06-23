@@ -325,7 +325,6 @@ GDraw_Initialise (pGCONTEXT pContext, pcGCONTEXT pOldContext)
 		*	This happens sometimes and it spoils my context counters ( ncontext/ncairo_types ) 
 		*	So it's just cleaned up at the risc of crashing. ( TODO fixit )
 		*/
-		printf("GDraw_Initialise called with an already initialised context\n");
 		fflush(stdout);/*	...as we might crash very soon		*/
 
 		data=dp_list[pContext->Data[0]];
@@ -359,7 +358,6 @@ GDraw_Initialise (pGCONTEXT pContext, pcGCONTEXT pOldContext)
 
 	ncontext++;
 
-	printf(" Now %d contexts in use.\n", ncontext);
 	return 0;
 }
 
@@ -501,7 +499,6 @@ GDraw_Terminate (pGCONTEXT pContext)
 	free((BYTE *)data);
 	dp_list[pos]=NULL;
 
-	printf("XCL : Now %d cairo_t objects in use.\n", ncairo_types);
 	ncontext--;
 	npositions_used--;
 
@@ -509,13 +506,14 @@ GDraw_Terminate (pGCONTEXT pContext)
 
 	if(ncontext==0)/*	Program ends : print a list of used functions to stdout	*/
 	{
+/*
 		for(c=0; c < MAX_STATNODE; c++){
 			if(statlist[c].count > 0)
 				printf("    %10d times called  %s\n",
 					statlist[c].count, statlist[c].name);
 		}
+*/
 		xcl_clean_bm_cache();
-		printf("\n %d maps were in bm cache\n", mapcount);
 	}
 	return 0;
 }
@@ -721,7 +719,6 @@ GColour_SetTransparencyLookupTable ( pGCONTEXT pContext,pcBYTE Table )
     STUB ("GColour_SetTransparencyLookupTable");
 	statlist[34].count++;
 
-	printf("SetTransparencyLookupTable\n");
     return 0;
 }
 
