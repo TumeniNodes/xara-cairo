@@ -74,8 +74,6 @@ History
 - 2010-05-11: First attempt at replacing CDraw with cairo [announced](http://lists.cairographics.org/archives/cairo/2010-May/019862.html) along with a new Git repo at git://repo.or.cz/xara-cairo.git
 - 2007-11-06: Last commit to SVN
 - 2007-01-30: Xara LTD [aquired by Magix](http://www.talkgraphics.com/showthread.php?25654-Xara-acquired-by-MAGIX)
-- 2007-10-09: Xara Extreme marked broken and removed from FreeBSD ports
-- 2006-04-04: XaraXL added to [FreeBSD ports](http://www.freebsdsoftware.org/graphics/xaralx.html)
 - 2006-03-16: SVN repository made public at
   [xaraxtreme.org](http://www.xaraxtreme.org/) under the GPLv2 + a binary blob for the CDraw rendering engine
 
