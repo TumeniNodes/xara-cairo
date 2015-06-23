@@ -9,7 +9,7 @@ Build Requirements
 * wxgtk-unicode-2.8
 * cairo-1.10
 * libxml-2.7
-* autoconf-2.68
+* autoconf-2.69
 * automake-1.10
 * gettext-0.18
 * perl-5.4
@@ -22,7 +22,7 @@ Build Requirements
 OpenBSD
 -------
 
-    $ export AUTOMAKE_VERSION=1.10 AUTOCONF_VERSION=2.68
+    $ export AUTOMAKE_VERSION=1.10 AUTOCONF_VERSION=2.69
     $ ./autogen.sh && ./configure
     $ gmake
 
