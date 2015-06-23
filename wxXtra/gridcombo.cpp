@@ -240,7 +240,7 @@ int wxGridComboPopup::ItemFromPoint(wxPoint ptClient)
 		wxRect rcItem = GetItemRect(i);
 
 		// Check if the item should be updated.
-		if (rcItem.Inside(ptClient))
+		if (rcItem.Contains(ptClient))
 			return i;
 	}
 

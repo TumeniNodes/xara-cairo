@@ -9,7 +9,7 @@ Build Requirements
 * wxgtk-unicode-2.8
 * cairo-1.10
 * libxml-2.7
-* autoconf-2.6
+* autoconf-2.68
 * automake-1.10
 * gettext-0.18
 * perl-5.4
@@ -44,7 +44,6 @@ Fixes and Additions
 
 (eradman)
 
-- Adapted to [wxWidgets](http://wxwidgets.org) 3.0
 - Adapted to [libpng](http://www.libpng.org/pub/png/libpng-manual.txt) 1.5 and 1.6
 - Don't print memory warnings for platforms without malloc_usable_size(3)
 - Compile with -Wno-write-strings 
