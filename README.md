@@ -3,6 +3,13 @@ xara-cairo
 
 An fast, 100% open source vector drawing program based on XaraLX
 
+Project Status
+--------------
+
+Maintainers needed. Tasks:
+
+* Port to wxWindows 3.0 ( [#5](../../issues/5) )
+
 Build Requirements
 ------------------
 
